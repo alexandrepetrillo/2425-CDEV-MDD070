@@ -13,8 +13,14 @@ public class Dossier {
     }
 
     public int calculerTaille() {
-        // TODO
-        return 0;
+        int taille = 0;
+        for (Fichier fichier : fichiers) {
+            taille = taille + fichier.getTaille();
+        }
+        for (Dossier sousDossier : sousDossiers) {
+            taille = taille + sousDossier.calculerTaille();
+        }
+        return taille;
     }
 
     public void add(Fichier fichier) {
