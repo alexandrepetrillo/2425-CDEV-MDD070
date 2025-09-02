@@ -17,10 +17,12 @@ public class Main {
     }
 
     private static void testSurTuple() {
-        Tuple tuple = new Pair("A", "B");
-
+        Tuple tuple = new Triplet("A", "B", "C");
         for (Iterator<String> it = tuple.iterator(); it.hasNext(); ) {
             System.out.println(it.next());
+        }
+        for (String x : tuple) {
+            System.out.println(x);
         }
     }
 

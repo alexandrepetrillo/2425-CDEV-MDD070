@@ -27,6 +27,6 @@ public class Triplet implements Tuple {
 
     @Override
     public Iterator<String> iterator() {
-        return null;
+        return new TripletIterator(this);
     }
 }

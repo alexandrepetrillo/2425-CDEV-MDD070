@@ -3,17 +3,17 @@ package iterator.collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class PairIterator implements Iterator<String> {
-    private final Pair pair;
+public class TripletIterator implements Iterator<String> {
+    private final Triplet triplet;
     private Integer nombreElementsParcourus = 0;
 
-    public PairIterator(Pair pair) {
-        this.pair = pair;
+    public TripletIterator(Triplet triplet) {
+        this.triplet = triplet;
     }
 
     @Override
     public boolean hasNext() {
-        return nombreElementsParcourus < 2;
+        return nombreElementsParcourus < 3;
     }
 
     @Override
@@ -23,9 +23,11 @@ public class PairIterator implements Iterator<String> {
         }
         String val;
         if (nombreElementsParcourus == 0) {
-            val = pair.getVal1();
+            val = triplet.getVal1();
+        } else if (nombreElementsParcourus == 1) {
+            val = triplet.getVal2();
         } else {
-            val = pair.getVal2();
+            val = triplet.getVal3();
         }
         nombreElementsParcourus++;
         return val;
